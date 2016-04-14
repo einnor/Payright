@@ -36,4 +36,13 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+
+    /**
+     * A user is has of one role
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role() {
+        return $this->belongsTo('App\Role');
+    }
 }

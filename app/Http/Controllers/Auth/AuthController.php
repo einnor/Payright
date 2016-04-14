@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Role;
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -22,6 +23,9 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+
+    protected $redirectPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -56,10 +60,17 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+
+        Role::create([
+            'user_id'   =>  $user->id,
+            'role'      =>  $data['role'],
+        ]);
+
+        return $user;
     }
 }
