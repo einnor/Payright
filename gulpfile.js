@@ -37,22 +37,25 @@ elixir(function(mix) {
     // Javascript
     var jQuery = '../../../node_modules/jquery/dist/jquery.js';
     var sweetAlert = '../../../node_modules/sweetalert/dist/sweetalert-dev.js';
-    var foundationJsFolder = '../../../node_modules/foundation-sites/js/';
+    //var foundationJsFolder = '../../../node_modules/foundation-sites/js/';
+    var foundationJs = '../../../node_modules/foundation-sites/dist/foundation.min.js';
 
     mix.scripts([
         jQuery,
-        foundationJsFolder + 'foundation.core.js',
+        foundationJs,
+        //foundationJsFolder + 'foundation.core.js',
         // Include any needed components here. The following are just examples.
-        foundationJsFolder + 'foundation.util.mediaquery.js',
-        foundationJsFolder + 'foundation.util.keyboard.js',
-        foundationJsFolder + 'foundation.util.timerAndImageLoader.js',
-        foundationJsFolder + 'foundation.tabs.js',
+        //foundationJsFolder + 'foundation.util.mediaquery.js',
+        //foundationJsFolder + 'foundation.util.keyboard.js',
+        //foundationJsFolder + 'foundation.util.timerAndImageLoader.js',
+        //foundationJsFolder + 'foundation.tabs.js',
+        //foundationJsFolder + 'foundation.offcanvas.js',
 
         sweetAlert,
 
         // This file initializes foundation
         'start_foundation.js'
     ]);
-    
+
 
 });

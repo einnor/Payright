@@ -7,11 +7,11 @@
     <div class="row">
         <div class="medium-6 medium-centered large-4 large-centered columns">
 
-            <form method="POST" action="/auth/login">
+            <form method="POST" action="/auth/login" class="log-in-form">
 
                 {!! csrf_field() !!}
 
-                <div class="row column log-in-form">
+                <div class="row column">
                     <h4 class="text-center">Sign In</h4>
                     <hr />
 

@@ -12,9 +12,12 @@ $form-padding: $global-padding;
 // Setting the form border radius
 $form-radius: $global-radius;
 
-.log-in-form {
+.new-user-form {
   border: 1px solid $form-border-color;
   padding: $form-padding;
   border-radius: $form-radius;
-  margin-top: 7em;
+}
+
+.container {
+  margin-top: 2em;
 }

@@ -9,45 +9,89 @@
     <body>
 
 
-    <div class="top-bar" id="main-menu">
-        <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu>
-                <li class="menu-text">PayRight</li>
-            </ul>
-        </div>
-        <div class="top-bar-right">
-            <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+            <div class="off-canvas position-left" id="offCanvas" data-off-canvas>
 
-                @if($signedIn)
+                <!--Side Menu-->
 
-                    <li class="has-submenu">
-                        <a href="#">{{ $user->name }}</a>
-                        <ul class="submenu menu vertical" data-submenu>
-                            <li><a href="/auth/logout">Logout</a></li>
+                <aside class="left-off-canvas-menu">
+
+                    <div class="icon-bar vertical five-up">
+                        <a class="item">
+                            <i class="fi-home"></i>
+                            <label>Home</label>
+                        </a>
+                        <a class="item">
+                            <i class="fi-home"></i>
+                            <label>Bookmark</label>
+                        </a>
+                        <a class="item">
+                            <i class="fi-home"></i>
+                            <label>Info</label>
+                        </a>
+                        <a class="item">
+                            <i class="fi-home"></i>
+                            <label>Mail</label>
+                        </a>
+                        <a class="item">
+                            <i class="fi-home"></i>
+                            <label>Like</label>
+                        </a>
+                    </div>
+
+                </aside>
+
+
+            </div>
+
+
+            <div class="off-canvas-content" data-off-canvas-content>
+
+                <!-- Main -->
+
+                <div class="title-bar" id="main-menu">
+                    <div class="top-bar-left">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <button class="menu-icon" type="button" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas"></button>
+                            <div class="title-bar-title">PayRight</div>
                         </ul>
-                    </li>
+                    </div>
+                    <div class="top-bar-right">
+                        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
 
-                @else
+                            @if($signedIn)
 
-                    <li><a href="/auth/login">Login</a></li>
-                    <li><a href="#">Sign up</a></li>
+                                <li><a href="#">{{ $user->name }}</a></li>
+                                <li><a href="#">Change Password</a></li>
+                                <li><a href="/auth/logout">Logout</a></li>
 
-                @endif
+                            @else
 
-            </ul>
+                                <li><a href="/auth/login">Login</a></li>
+                                <li><a href="#">Sign up</a></li>
+
+                            @endif
+
+                        </ul>
+                    </div>
+                </div>
 
 
+
+
+
+                <div class="container">
+                    @yield('content')
+                </div>
+
+
+            </div>
         </div>
     </div>
 
 
 
-
-
-
-    <div class="container">
-        @yield('content')
-    </div>
 
 
 
