@@ -36,6 +36,7 @@ elixir(function(mix) {
 
     // Javascript
     var jQuery = '../../../node_modules/jquery/dist/jquery.js';
+    var sweetAlert = '../../../node_modules/sweetalert/dist/sweetalert-dev.js';
     var foundationJsFolder = '../../../node_modules/foundation-sites/js/';
 
     mix.scripts([
@@ -47,8 +48,11 @@ elixir(function(mix) {
         foundationJsFolder + 'foundation.util.timerAndImageLoader.js',
         foundationJsFolder + 'foundation.tabs.js',
 
+        sweetAlert,
+
         // This file initializes foundation
         'start_foundation.js'
     ]);
+    
 
 });

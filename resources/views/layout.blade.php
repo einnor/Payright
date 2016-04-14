@@ -9,34 +9,34 @@
     <body>
 
 
-    <div class="top-bar">
-        <div class="top-bar-title">
-            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-              <button class="menu-icon dark" type="button" data-toggle></button>
-            </span>
-            <strong>Site Title</strong>
+    <div class="top-bar" id="main-menu">
+        <div class="top-bar-left">
+            <ul class="dropdown menu" data-dropdown-menu>
+                <li class="menu-text">PayRight</li>
+            </ul>
         </div>
-        <div id="responsive-menu">
-            <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li>
-                        <a href="#">One</a>
-                        <ul class="menu vertical">
-                            <li><a href="#">One</a></li>
-                            <li><a href="#">Two</a></li>
-                            <li><a href="#">Three</a></li>
+        <div class="top-bar-right">
+            <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+
+                @if($signedIn)
+
+                    <li class="has-submenu">
+                        <a href="#">{{ $user->name }}</a>
+                        <ul class="submenu menu vertical" data-submenu>
+                            <li><a href="/auth/logout">Logout</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Two</a></li>
-                    <li><a href="#">Three</a></li>
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                    <li><input type="search" placeholder="Search"></li>
-                    <li><button type="button" class="button">Search</button></li>
-                </ul>
-            </div>
+
+                @else
+
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="#">Sign up</a></li>
+
+                @endif
+
+            </ul>
+
+
         </div>
     </div>
 
@@ -51,9 +51,9 @@
 
 
 
-
     <script src="/js/all.js"></script>
 
+    @include('flash')
 
     </body>
 </html>
