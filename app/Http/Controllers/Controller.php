@@ -25,19 +25,21 @@ abstract class Controller extends BaseController
 
         $this->user = Auth::user();
 
-        $role = Role::where('user_id', $this->user->id)->first()->role;
+        if(Auth::check()){
+            $role = Role::where('user_id', $this->user->id)->first()->role;
 
-        if($role == 1){
-            $this->role = 'Officer';
-        }
-        elseif($role == 2) {
-            $this->role = 'Analyst';
-        }
-        elseif($role == 3) {
-            $this->role = 'Manager';
-        }
-        elseif($role == 4) {
-            $this->role = 'Administrator';
+            if($role == 1){
+                $this->role = 'Officer';
+            }
+            elseif($role == 2) {
+                $this->role = 'Analyst';
+            }
+            elseif($role == 3) {
+                $this->role = 'Manager';
+            }
+            elseif($role == 4) {
+                $this->role = 'Administrator';
+            }
         }
 
 
