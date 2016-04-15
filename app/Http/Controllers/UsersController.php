@@ -29,7 +29,9 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('users.id', 'DESC')
+            ->join('roles', 'users.id', '=', 'roles.user_id')
+            ->get();
 
         return view('users.index', compact('users'));
     }
@@ -125,7 +127,7 @@ class UsersController extends Controller
 
     public function getAllUsers(){
 
-        return User::all();
+        return User::orderBy('id', 'DESC')->get();
 
     }
 }

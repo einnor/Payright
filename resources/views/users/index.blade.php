@@ -59,7 +59,7 @@
                     <tr>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
-                        <td></td>
+                        <td>{{ $user->role}}</td>
                     </tr>
 
                 @endforeach
