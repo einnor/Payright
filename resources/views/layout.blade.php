@@ -15,32 +15,33 @@
 
                 <!--Side Menu-->
 
-                <aside class="left-off-canvas-menu">
+                <button class="close-button" aria-label="Close menu" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <ul class="mobile-ofc vertical menu blackish mymenu">
 
-                    <div class="icon-bar vertical five-up">
-                        <a class="item">
-                            <i class="fi-home"></i>
-                            <label>Home</label>
-                        </a>
-                        <a class="item">
-                            <i class="fi-home"></i>
-                            <label>Bookmark</label>
-                        </a>
-                        <a class="item">
-                            <i class="fi-home"></i>
-                            <label>Info</label>
-                        </a>
-                        <a class="item">
-                            <i class="fi-home"></i>
-                            <label>Mail</label>
-                        </a>
-                        <a class="item">
-                            <i class="fi-home"></i>
-                            <label>Like</label>
-                        </a>
-                    </div>
+                    @if($signedIn)
+                        <li class="border"><a href="#">MENU</a></li>
+                        @if($role == 'Administrator')
+                            <li class="border"><a href="/users">Users</a></li>
+                        @endif
 
-                </aside>
+                        <li>
+                            <a href="#">Invoices</a>
+                            <ul class="submenu menu vertical" data-submenu>
+
+                                <li><a href="#">All Invoices</a></li>
+                                <li><a href="#">Uncommitted Invoices</a></li>
+                                <li><a href="#">Committed Invoices</a></li>
+                                <li><a href="#">Reviewed Payments</a></li>
+                                <li><a href="">Approved Payments</a></li>
+                                <li><a href="#">Settled Payments</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <h6 class="text-center">You need to be logged in to access this menu</h6>
+                    @endif
+                </ul>
 
 
             </div>
@@ -69,9 +70,10 @@
                                     </a>
                                     <ul class="menu black">
                                         <li><a href="#">Change Password</a></li>
+                                        <li><a href="/auth/logout">Logout</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/auth/logout">Logout</a></li>
+
 
 
                             @else
@@ -83,9 +85,6 @@
                         </ul>
                     </div>
                 </div>
-
-
-
 
 
                 <div class="container">

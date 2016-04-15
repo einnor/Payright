@@ -62,7 +62,7 @@
 
 @import "partials/topnav";
 
-@import "partials/sidemenu";
+//@import "partials/sidemenu";
 
 @include foundation-everything;
 
@@ -79,4 +79,21 @@
 
 .black li{
   background: #000000;
+}
+
+.blackish li{
+  background: #474747;
+}
+
+.border{
+  border-bottom: 1px solid #ffffff;
+}
+
+.mymenu ul li{
+  padding-left: 30px;
+}
+
+.mymenu ul li a{
+  font-size:12px;
+  font-style: italic;
 }
