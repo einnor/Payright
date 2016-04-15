@@ -62,7 +62,10 @@
 
                             @if($signedIn)
 
-                                <li><a href="#">{{ $user->name }}</a></li>
+                                <li><a href="#">
+                                    {{ $user->name }}
+                                    <span class="role">( {{ $role }} )</span>
+                                </a></li>
                                 <li><a href="#">Change Password</a></li>
                                 <li><a href="/auth/logout">Logout</a></li>
 

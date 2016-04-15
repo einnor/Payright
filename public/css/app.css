@@ -8335,4 +8335,9 @@ table.hover tr:nth-of-type(even):hover {
 .container {
   margin-top: 2em; }
 
+.role {
+  font-size: 9px;
+  font-style: italic;
+  color: #FFFFFF; }
+
 /*# sourceMappingURL=app.css.map */
