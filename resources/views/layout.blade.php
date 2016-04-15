@@ -58,16 +58,21 @@
                         </ul>
                     </div>
                     <div class="top-bar-right">
-                        <ul class="menu" data-responsive-menu="drilldown medium-dropdown">
+                        <ul class="dropdown menu" data-dropdown-menu>
 
                             @if($signedIn)
 
-                                <li><a href="#">
-                                    {{ $user->name }}
-                                    <span class="role">( {{ $role }} )</span>
-                                </a></li>
-                                <li><a href="#">Change Password</a></li>
+                                <li>
+                                    <a href="#">
+                                        {{ $user->name }}
+                                        <span class="role">( {{ $role }} )</span>
+                                    </a>
+                                    <ul class="menu black">
+                                        <li><a href="#">Change Password</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="/auth/logout">Logout</a></li>
+
 
                             @else
 
