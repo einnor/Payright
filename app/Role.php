@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    protected $fillable = ['role'];
+    protected $fillable = ['user_id','role'];
 
     /**
      * A user is has of one role
