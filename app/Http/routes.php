@@ -27,3 +27,9 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 //Users resource
 Route::resource('users', 'UsersController');
 
+
+
+
+//APIs
+Route::get('api/users', 'UsersController@getAllUsers');
+
