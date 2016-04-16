@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ClientsRequest extends Request
+class InvoicesRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,9 @@ class ClientsRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|max:255|unique:clients',
-            'service' => 'required'
+            'client_id'     => 'required',
+            'particular'    => 'required|max:255',
+            'amount'        => 'required'
         ];
     }
 }

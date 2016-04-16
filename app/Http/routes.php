@@ -36,4 +36,5 @@ Route::resource('invoices', 'InvoicesController');
 
 //APIs
 Route::get('api/users', 'UsersController@getAllUsers');
+Route::get('api/clients', 'ClientsController@getAllClients');
 

@@ -27,12 +27,12 @@
                             <a href="#">Invoices</a>
                             <ul class="submenu menu vertical" data-submenu>
 
-                                <li><a href="#">All Invoices</a></li>
-                                <li><a href="#">Uncommitted Invoices</a></li>
-                                <li><a href="#">Committed Invoices</a></li>
-                                <li><a href="#">Reviewed Payments</a></li>
-                                <li><a href="">Approved Payments</a></li>
-                                <li><a href="#">Settled Payments</a></li>
+                                <li><a href="/invoices">All Invoices</a></li>
+                                <li><a href="/invoices/uncommitted">Uncommitted Invoices</a></li>
+                                <li><a href="/invoices/committed">Committed Invoices</a></li>
+                                <li><a href="/invoices/reviewed">Reviewed Payments</a></li>
+                                <li><a href="/invoices/approved">Approved Payments</a></li>
+                                <li><a href="/invoices/settled">Settled Payments</a></li>
                             </ul>
                         </li>
 

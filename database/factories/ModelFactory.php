@@ -37,3 +37,14 @@ $factory->define(\App\Client::class, function (Faker\Generator $faker) {
         'service'     => $faker->paragraphs(3,true),
     ];
 });
+
+
+$factory->define(\App\Invoice::class, function (Faker\Generator $faker) {
+    $client = factory('App\Client')->create();
+    return [
+        'user_id'     => $client->user_id,
+        'client_id'   => $client->id,
+        'particular'  => $faker->name,
+        'amount'      => $faker->numberBetween(100,5000000),
+    ];
+});

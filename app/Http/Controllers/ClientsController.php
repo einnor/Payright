@@ -113,4 +113,14 @@ class ClientsController extends Controller
     {
         //
     }
+
+
+
+
+
+    public function getAllClients(){
+
+        return Client::orderBy('id', 'DESC')->get();
+
+    }
 }
