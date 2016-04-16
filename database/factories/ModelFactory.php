@@ -28,3 +28,12 @@ $factory->define(\App\Role::class, function (Faker\Generator $faker) {
         'role'        => $faker->numberBetween(1,4),
     ];
 });
+
+
+$factory->define(\App\Client::class, function (Faker\Generator $faker) {
+    return [
+        'user_id'     => factory('App\Role')->create()->user_id,
+        'name'        => $faker->name,
+        'service'     => $faker->paragraphs(3,true),
+    ];
+});

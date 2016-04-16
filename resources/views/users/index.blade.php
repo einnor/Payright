@@ -31,7 +31,9 @@
                             <option value="3">Financial Manager</option>
                             <option value="4">System Administrator</option>
                         </select>
+                    </label>
                     <p><button type="submit" class="button expanded">Create User</button></p>
+
                 </div>
             </form>
 

@@ -21,12 +21,9 @@
                 <ul class="mobile-ofc vertical menu blackish mymenu">
 
                     @if($signedIn)
-                        <li class="border"><a href="#">MENU</a></li>
-                        @if($role == 'Administrator')
-                            <li class="border"><a href="/users">Users</a></li>
-                        @endif
+                        <li><a href="#">MENU</a></li>
 
-                        <li>
+                        <li class="border">
                             <a href="#">Invoices</a>
                             <ul class="submenu menu vertical" data-submenu>
 
@@ -38,6 +35,13 @@
                                 <li><a href="#">Settled Payments</a></li>
                             </ul>
                         </li>
+
+                        <li class="border"><a href="/clients">Clients</a></li>
+
+                        @if($role == 'Administrator')
+                            <li class="border"><a href="/users">Users</a></li>
+                        @endif
+
                     @else
                         <h6 class="text-center">You need to be logged in to access this menu</h6>
                     @endif
