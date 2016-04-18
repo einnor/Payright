@@ -78,7 +78,8 @@ class InvoicesController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = Invoice::findOrFail($id);
+        return view('invoices.show', compact('invoice'));
     }
 
     /**

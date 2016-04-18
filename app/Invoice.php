@@ -22,4 +22,19 @@ class Invoice extends Model
     public function client() {
         return $this->belongsTo('App\Client');
     }
+
+
+    /**
+     * An invoice has many attachments
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function attachments() {
+        return $this->hasMany('App\Attachment');
+    }
+
+
+
+    public function addAttachment(Attachment $attachment){
+        return $this->attachments()->save($attachment);
+    }
 }

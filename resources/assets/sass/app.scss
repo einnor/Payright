@@ -58,6 +58,8 @@
 
 @import "node_modules/sweetalert/dev/sweetalert";
 
+@import "node_modules/dropzone/src/dropzone";
+
 
 
 @import "partials/topnav";
@@ -96,4 +98,16 @@
 .mymenu ul li a{
   font-size:12px;
   font-style: italic;
+}
+
+img{
+  max-width: 100%;
+}
+
+.gallery__image{
+  margin-bottom: 1em;
+}
+
+.bold{
+  font-weight: bold;
 }

@@ -37,6 +37,7 @@ elixir(function(mix) {
     // Javascript
     var jQuery = '../../../node_modules/jquery/dist/jquery.js';
     var sweetAlert = '../../../node_modules/sweetalert/dist/sweetalert-dev.js';
+    var dropZone = '../../../node_modules/dropzone/dist/dropzone.js';
     //var foundationJsFolder = '../../../node_modules/foundation-sites/js/';
     var foundationJs = '../../../node_modules/foundation-sites/dist/foundation.min.js';
 
@@ -52,6 +53,7 @@ elixir(function(mix) {
         //foundationJsFolder + 'foundation.offcanvas.js',
 
         sweetAlert,
+        dropZone,
 
         // This file initializes foundation
         'start_foundation.js'

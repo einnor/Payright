@@ -61,7 +61,7 @@
                 @foreach($invoices as $invoice)
 
                     <tr>
-                        <td>{{ $invoice->client->name }}</td>
+                        <td><a href="invoices/{{ $invoice->id }}">{{ $invoice->client->name }}</a></td>
                         <td>{{ $invoice->particular }}</td>
                         <td>{{ $invoice->amount }}</td>
                     </tr>

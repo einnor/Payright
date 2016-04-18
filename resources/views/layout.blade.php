@@ -107,6 +107,8 @@
 
     <script src="/js/all.js"></script>
 
+    @yield('scripts.footer')
+
     @include('flash')
 
     </body>

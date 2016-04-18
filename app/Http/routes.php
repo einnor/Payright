@@ -30,8 +30,11 @@ Route::resource('users', 'UsersController');
 //Clients resource
 Route::resource('clients', 'ClientsController');
 
-//Clients resource
+//Invoices resource
 Route::resource('invoices', 'InvoicesController');
+
+//Attachments
+Route::post('invoices/{invoice_id}/attachments', ['as' => 'store_attachment_path', 'uses' =>  'AttachmentsController@store']);
 
 
 //APIs
