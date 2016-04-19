@@ -115,4 +115,51 @@ class InvoicesController extends Controller
     {
         //
     }
+
+
+
+    public function getAllInvoices(){
+
+        return Invoice::orderBy('id', 'DESC')->get();
+
+    }
+
+
+    public function getUncommittedInvoices(){
+
+        return Invoice::where('state', '=', 0)->orderBy('id', 'DESC')->get();
+
+    }
+
+
+
+    public function getCommittedInvoices(){
+
+        return Invoice::where('state', '=', 1)->orderBy('id', 'DESC')->get();
+
+    }
+
+
+
+    public function getReviewedInvoices(){
+
+        return Invoice::where('state', '=', 2)->orderBy('id', 'DESC')->get();
+
+    }
+
+
+    public function getApprovedInvoices(){
+
+        return Invoice::where('state', '=', 3)->orderBy('id', 'DESC')->get();
+
+    }
+
+
+
+    public function getSettledInvoices(){
+
+        return Invoice::where('state', '=', 4)->orderBy('id', 'DESC')->get();
+
+    }
+
 }

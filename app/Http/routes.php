@@ -49,3 +49,10 @@ Route::post('invoices/{invoice_id}/comments', ['as' => 'store_comment_path', 'us
 Route::get('api/users', 'UsersController@getAllUsers');
 Route::get('api/clients', 'ClientsController@getAllClients');
 
+Route::get('api/invoices/all', 'InvoicesController@getAllInvoices');
+Route::get('api/invoices/uncommitted', 'InvoicesController@getUncommittedInvoices');
+Route::get('api/invoices/committed', 'InvoicesController@getCommittedInvoices');
+Route::get('api/invoices/reviewed', 'InvoicesController@getReviewedInvoices');
+Route::get('api/invoices/approved', 'InvoicesController@getApprovedInvoices');
+Route::get('api/invoices/settled', 'InvoicesController@getSettledInvoices');
+
