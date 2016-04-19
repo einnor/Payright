@@ -85,6 +85,59 @@ class InvoicesController extends Controller
 
 
 
+    public function forwardState($id){
+
+        $invoice = Invoice::findOrFail($id);
+        $state = array_keys($invoice->state)[0];
+
+        $invoice->state = $state + 1;
+
+        $invoice->save();
+
+        switch($state){
+            case 0:
+                //Show Flash message
+                flash()->success('Payment Request','Invoice has been submitted for review!');
+                break;
+            case 1:
+                //Show Flash message
+                flash()->success('Reviewed','Invoice has been submitted for approval!');
+                break;
+            case 2:
+                //Show Flash message
+                flash()->success('Approved','Invoice has been submitted for settling!');
+                break;
+            case 3:
+                //Show Flash message
+                flash()->success('Settled','Invoice has been settled!');
+                break;
+        }
+
+        //Redirect
+        return redirect()->back();
+
+    }
+
+
+    public function backwardState($id){
+
+        $invoice = Invoice::findOrFail($id);
+        $state = array_keys($invoice->state)[0];
+
+        $invoice->state = $state - 1;
+
+        $invoice->save();
+
+        //Show Flash message
+        flash()->info('Backtracked','Invoice has been backtracked!');
+
+        //Redirect
+        return redirect()->back();
+
+    }
+
+
+
     public function indexBasedOnType($type){
 
         $state = 0;
@@ -103,7 +156,7 @@ class InvoicesController extends Controller
                 $state = 3;
                 break;
             case "settled":
-                $state = 3;
+                $state = 4;
                 break;
         }
 

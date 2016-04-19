@@ -21,7 +21,7 @@
             <h6 class="small-12 medium-6 columns bold">Created by</h6><h6 class="small-12 medium-6 columns">{!! $invoice->user->name  !!}</h6>
 
 
-            <form method="POST" action="">
+            <form method="POST" class="small-12 medium-6 large-6 columns" action="{{ route('forward_state_path', [$invoice->id]) }}">
 
                 {!! csrf_field() !!}
 
@@ -44,6 +44,31 @@
                             <p><button type="submit" class="button expanded">{{ $invoice->state[$state] }}</button></p>
                         @else
                             <p><button type="submit" class="button expanded disabled">{{ $invoice->state[$state] }}</button></p>
+                        @endif
+                    @elseif($role_key == 4)
+
+                    @endif
+                </div>
+            </form>
+
+            <form method="POST" class="small-12 medium-6 large-6 columns" action="{{ route('backward_state_path', [$invoice->id]) }}">
+
+                {!! csrf_field() !!}
+
+                <div class="row column">
+                    @if($role_key == 1)
+                        <p><button type="submit" class="button expanded disabled">Backtrack</button></p>
+                    @elseif($role_key == 2)
+                        @if($state == 1)
+                            <p><button type="submit" class="button expanded">Backtrack</button></p>
+                        @else
+                            <p><button type="submit" class="button expanded disabled">Backtrack</button></p>
+                        @endif
+                    @elseif($role_key == 3)
+                        @if($state == 2)
+                            <p><button type="submit" class="button expanded">Backtrack</button></p>
+                        @else
+                            <p><button type="submit" class="button expanded disabled">Backtrack</button></p>
                         @endif
                     @elseif($role_key == 4)
 

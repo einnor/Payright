@@ -40,6 +40,11 @@ Route::resource('invoices', 'InvoicesController');
 
 Route::get('invoices/type/{type}', 'InvoicesController@indexBasedOnType')->where('type', '[a-z]+');
 
+Route::post('invoices/{id}/state/forward', ['as' => 'forward_state_path', 'uses' =>  'InvoicesController@forwardState']);
+
+Route::post('invoices/{id}/state/backward', ['as' => 'backward_state_path', 'uses' =>  'InvoicesController@backwardState']);
+
+
 //Attachments
 Route::post('invoices/{invoice_id}/attachments', ['as' => 'store_attachment_path', 'uses' =>  'AttachmentsController@store']);
 
