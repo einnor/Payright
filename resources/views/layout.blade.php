@@ -60,7 +60,7 @@
                     <div class="top-bar-left">
                         <ul class="dropdown menu" data-dropdown-menu>
                             <button class="menu-icon" type="button" data-toggle="offCanvas" aria-expanded="false" aria-controls="offCanvas"></button>
-                            <div class="title-bar-title">PayRight</div>
+                            <div class="title-bar-title"><a href="/">PayRight</a></div>
                         </ul>
                     </div>
                     <div class="top-bar-right">
