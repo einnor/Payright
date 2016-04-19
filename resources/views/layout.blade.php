@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>PayRight</title>
         <link rel="stylesheet" href="/css/app.css">
+        <link rel="stylesheet" href="/css/lity.css">
     </head>
     <body>
 

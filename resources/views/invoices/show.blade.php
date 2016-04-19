@@ -125,7 +125,7 @@
 
                         <div class="small-12 medium-4 columns gallery__image end">
 
-                            <a class="th" href="/{{ $attachment->path }}">
+                            <a class="th" href="/{{ $attachment->path }}" data-lity >
                                 <img class="thumbnail" src="/{{ $attachment->thumbnail_path }}" alt="{{ $attachment->name }}" />
                             </a>
                         </div>
