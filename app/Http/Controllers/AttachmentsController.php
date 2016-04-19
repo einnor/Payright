@@ -9,7 +9,6 @@ use App\Http\Requests;
 use App\Http\Requests\AttachmentsRequest;
 use App\Http\Controllers\Controller;
 use App\AddAttachmentToInvoice;
-use Illuminate\Support\Facades\Auth;
 
 class AttachmentsController extends Controller
 {

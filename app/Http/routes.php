@@ -36,6 +36,9 @@ Route::resource('invoices', 'InvoicesController');
 //Attachments
 Route::post('invoices/{invoice_id}/attachments', ['as' => 'store_attachment_path', 'uses' =>  'AttachmentsController@store']);
 
+//Comments
+Route::post('invoices/{invoice_id}/comments', ['as' => 'store_comment_path', 'uses' =>  'CommentsController@store']);
+
 
 //APIs
 Route::get('api/users', 'UsersController@getAllUsers');

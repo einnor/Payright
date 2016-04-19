@@ -48,3 +48,23 @@ $factory->define(\App\Invoice::class, function (Faker\Generator $faker) {
         'amount'      => $faker->numberBetween(100,5000000),
     ];
 });
+
+$factory->define(\App\Attachment::class, function (Faker\Generator $faker) {
+    $invoice = factory('App\Invoice')->create();
+    return [
+        'user_id'       => $invoice->user_id,
+        'invoice_id'    => $invoice->id,
+        'name'          => 'a6eaad0b16be68a02fc76c296e3dc7ff2af0b1ee.jpg',
+        'path'          => 'images/attachments/a6eaad0b16be68a02fc76c296e3dc7ff2af0b1ee.jpg',
+        'thumbnail_path' => 'images/attachments/tn-a6eaad0b16be68a02fc76c296e3dc7ff2af0b1ee.jpg',
+    ];
+});
+
+$factory->define(\App\Comment::class, function (Faker\Generator $faker) {
+    $invoice = factory('App\Invoice')->create();
+    return [
+        'user_id'     => $invoice->user_id,
+        'invoice_id'  => $invoice->id,
+        'comment'     => $faker->paragraphs(1,true),
+    ];
+});

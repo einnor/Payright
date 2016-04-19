@@ -20,7 +20,10 @@ class Attachment extends Model
     ];
 
 
-
+    /**
+     * An attachment belongs to an invoice
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function invoice(){
         return $this->belongsTo('App\Invoice');
     }

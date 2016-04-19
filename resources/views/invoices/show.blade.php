@@ -18,11 +18,39 @@
 
             <h6 class="small-12 medium-6 columns bold">Client</h6><h6 class="small-12 medium-6 columns">{!! $invoice->client->name  !!}</h6>
 
-            <h6 class="small-12 medium-6 columns bold">Created by</h6><h6 class="small-12 medium-6 columns">{!! $invoice->user  !!}</h6>
+            <h6 class="small-12 medium-6 columns bold">Created by</h6><h6 class="small-12 medium-6 columns">{!! $invoice->user->name  !!}</h6>
 
             <hr />
 
+            <form method="POST" action="{{ route('store_comment_path', [$invoice->id]) }}" class="new-user-form">
+
+                {!! csrf_field() !!}
+
+                <div class="row column">
+                    @include('errors')
+
+                    <textarea rows="2" id="comment" name="comment" placeholder="Write a comment" value="{{ old('comment') }}" required></textarea>
+                    <p><button type="submit" class="button expanded">Post Comment</button></p>
+                </div>
+            </form>
+
             <h4 class="text-center">COMMENTS</h4>
+
+
+            @foreach($invoice->comments as $comment)
+
+                <div class="row">
+                    <div class="medium-12 large-12 columns">
+                        <article class="article-card">
+                            <div class="card-content">
+                                <p class="post-author">By <a href="#">{{ $comment->user->name }}</a> | <span class="text-center">{{ $comment->created_at }}</span></p>
+                                <p>{{ $comment->comment }}</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            @endforeach
 
         </div>
 
