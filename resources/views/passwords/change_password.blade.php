@@ -7,7 +7,7 @@
     <div class="row">
         <div class="medium-6 medium-centered large-4 large-centered columns">
 
-            <form method="POST" action="/auth/password/update" class="log-in-form">
+            <form method="POST" action="/password/update" class="log-in-form">
 
                 {!! csrf_field() !!}
 

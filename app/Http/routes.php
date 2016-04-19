@@ -24,8 +24,8 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
 //Passwords
-Route::get('auth/password/edit', 'Auth\AuthController@edit');
-Route::post('auth/password/update', 'Auth\AuthController@update');
+Route::get('password/edit', 'UserPasswordsController@edit');
+Route::post('password/update', 'UserPasswordsController@update');
 
 
 

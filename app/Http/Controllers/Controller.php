@@ -19,11 +19,15 @@ abstract class Controller extends BaseController
 
     protected $role;
 
+    protected $role_key;
+
 
     public function __construct()
     {
 
         $this->user = Auth::user();
+
+
 
         if(Auth::check()){
 
@@ -42,9 +46,9 @@ abstract class Controller extends BaseController
             elseif($role == 4) {
                 $this->role[4] = 'Administrator';
             }
-        }
 
-        $role_key = array_keys($this->role)[0];
+            $this->role_key = array_keys($this->role)[0];
+        }
 
 
         view()->share('signedIn', Auth::check());
@@ -53,6 +57,6 @@ abstract class Controller extends BaseController
 
         view()->share('role', $this->role);
 
-        view()->share('role_key', $role_key);
+        view()->share('role_key', $this->role_key);
     }
 }

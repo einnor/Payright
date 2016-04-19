@@ -26,7 +26,7 @@ class PasswordsRequest extends Request
         return [
             'old_password'          =>  'required',
             'new_password'          =>  'required|min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[!$#%]).*$/',
-            'confirmed_new_password'=>  'required|same:new_password',
+            'confirmed_new_password'=>  'same:new_password',
         ];
     }
 }
