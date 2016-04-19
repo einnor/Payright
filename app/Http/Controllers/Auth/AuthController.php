@@ -78,6 +78,8 @@ class AuthController extends Controller
     public function update(PasswordsRequest $request){
         $user = User::findOrFail(Auth::user()->id);
 
+        //Hash::check('plain-text', $hashedPassword)
+
         if($user->password == bcrypt($request->new_password)){
             return "It's a match!";
         }
