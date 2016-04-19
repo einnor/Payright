@@ -27,7 +27,7 @@ class AttachmentsRequest extends Request
     public function rules()
     {
         return [
-            'attachment' => 'required|mimes:jpg,jpeg,png,bmp,pdf'
+            'attachment' => 'required|mimes:jpg,jpeg,png,bmp,pdf,gif'
         ];
     }
 }

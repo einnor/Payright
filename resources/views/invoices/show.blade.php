@@ -159,7 +159,7 @@
         Dropzone.options.addAttachmentsForm = {
             paramName:      'attachment',
             maxFileSize:    8,
-            acceptedFiles:  '.jpg, .jpeg, .png, .bmp, .pdf'
+            acceptedFiles:  '.jpg, .jpeg, .png, .bmp, .pdf, .gif'
         }
     </script>
 
