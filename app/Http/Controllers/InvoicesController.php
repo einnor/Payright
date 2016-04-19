@@ -79,7 +79,37 @@ class InvoicesController extends Controller
     public function show($id)
     {
         $invoice = Invoice::findOrFail($id);
-        return view('invoices.show', compact('invoice'));
+        $state = array_keys($invoice->state)[0];
+        return view('invoices.show', compact(['invoice', 'state']));
+    }
+
+
+
+    public function indexBasedOnType($type){
+
+        $state = 0;
+
+        switch($type){
+            case "uncommitted":
+                $state = 0;
+                break;
+            case "committed":
+                $state = 1;
+                break;
+            case "reviewed":
+                $state = 2;
+                break;
+            case "approved":
+                $state = 3;
+                break;
+            case "settled":
+                $state = 3;
+                break;
+        }
+
+        $invoices =  Invoice::where('state', '=', $state)->orderBy('id', 'DESC')->get();
+
+        return view('invoices.index_type', compact('invoices'));
     }
 
     /**

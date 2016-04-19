@@ -28,17 +28,17 @@
                             <ul class="submenu menu vertical" data-submenu>
 
                                 <li><a href="/invoices">All Invoices</a></li>
-                                <li><a href="/invoices/uncommitted">Uncommitted Invoices</a></li>
-                                <li><a href="/invoices/committed">Committed Invoices</a></li>
-                                <li><a href="/invoices/reviewed">Reviewed Payments</a></li>
-                                <li><a href="/invoices/approved">Approved Payments</a></li>
-                                <li><a href="/invoices/settled">Settled Payments</a></li>
+                                <li><a href="/invoices/type/uncommitted">Uncommitted Invoices</a></li>
+                                <li><a href="/invoices/type/committed">Committed Invoices</a></li>
+                                <li><a href="/invoices/type/reviewed">Reviewed Payments</a></li>
+                                <li><a href="/invoices/type/approved">Approved Payments</a></li>
+                                <li><a href="/invoices/type/settled">Settled Payments</a></li>
                             </ul>
                         </li>
 
                         <li class="border"><a href="/clients">Clients</a></li>
 
-                        @if($role == 'Administrator')
+                        @if($role_key == 4)
                             <li class="border"><a href="/users">Users</a></li>
                         @endif
 
@@ -70,7 +70,7 @@
                                 <li>
                                     <a href="#">
                                         {{ $user->name }}
-                                        <span class="role">( {{ $role }} )</span>
+                                        <span class="role">( {{ $role[$role_key] }} )</span>
                                     </a>
                                     <ul class="menu black">
                                         <li><a href="/auth/password/edit">Change Password</a></li>

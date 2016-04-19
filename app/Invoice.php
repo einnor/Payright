@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Carbon\Carbon;
+
 class Invoice extends Model
 {
     protected $table = 'invoices';
@@ -69,4 +71,35 @@ class Invoice extends Model
     public function addComment(Comment $comment){
         return $this->comments()->save($comment);
     }
+
+
+    //Attribute Formats
+
+    function getAmountAttribute($amount){
+        return 'KES ' . number_format($amount);
+    }
+
+    function getStateAttribute($state){
+        $stateFormat = array();
+        switch($state){
+            case 0:
+                $stateFormat[0] = 'Commit Payment Request';
+                break;
+            case 1:
+                $stateFormat[1] = 'Review';
+                break;
+            case 2:
+                $stateFormat[2] = 'Approve';
+                break;
+            case 3:
+                $stateFormat[3] = 'Settle';
+                break;
+            case 4:
+                $stateFormat[4] = 'Settled';
+                break;
+        }
+
+        return $stateFormat;
+    }
+
 }

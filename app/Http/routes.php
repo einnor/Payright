@@ -38,6 +38,8 @@ Route::resource('clients', 'ClientsController');
 //Invoices resource
 Route::resource('invoices', 'InvoicesController');
 
+Route::get('invoices/type/{type}', 'InvoicesController@indexBasedOnType')->where('type', '[a-z]+');
+
 //Attachments
 Route::post('invoices/{invoice_id}/attachments', ['as' => 'store_attachment_path', 'uses' =>  'AttachmentsController@store']);
 
