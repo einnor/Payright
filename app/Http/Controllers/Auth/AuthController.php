@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Http\Requests\PasswordsRequest;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -33,7 +35,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => ['getLogout', 'edit']]);
 
         parent::__construct();
     }
@@ -67,4 +69,43 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+
+    public function edit(){
+        return view('auth.change_password');
+    }
+
+    public function update(PasswordsRequest $request){
+        $user = User::findOrFail(Auth::user()->id);
+
+        if($user->password == bcrypt($request->new_password)){
+            return "It's a match!";
+        }
+
+        //Check if old passwords match
+        if($user->password != bcrypt($request->new_password)){
+
+            return "It's not a match!";
+
+            //Show Flash message
+            flash()->error('Failed','The old password is incorrect!');
+
+            //Redirect
+            return redirect()->back();
+        }
+
+        // Validate the new password length...
+
+        $user->fill([
+            'password' => bcrypt($request->newPassword)
+        ])->save();
+
+        //Show Flash message
+        flash()->success('Success','You have successfully changed your password!');
+
+        //Redirect
+        return redirect()->back();
+    }
+
+
 }

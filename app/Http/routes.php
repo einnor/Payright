@@ -23,6 +23,11 @@ Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
+//Passwords
+Route::get('auth/password/edit', 'Auth\AuthController@edit');
+Route::post('auth/password/update', 'Auth\AuthController@update');
+
+
 
 //Users resource
 Route::resource('users', 'UsersController');

@@ -73,7 +73,7 @@
                                         <span class="role">( {{ $role }} )</span>
                                     </a>
                                     <ul class="menu black">
-                                        <li><a href="#">Change Password</a></li>
+                                        <li><a href="/auth/password/edit">Change Password</a></li>
                                         <li><a href="/auth/logout">Logout</a></li>
                                     </ul>
                                 </li>
