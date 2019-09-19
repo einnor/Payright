@@ -8,6 +8,6 @@
     "dropzone": "^4.3.0",
     "jquery": "^2.2.3",
     "laravel-elixir": "^4.0.0",
-    "motion-ui": "^1.2.2"
+    "motion-ui": "^2.0.3"
   }
 }
