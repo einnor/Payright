@@ -1,0 +1,20 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "02:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: dropzone
+    versions:
+    - 5.7.2
+    - 5.7.4
+    - 5.7.5
+    - 5.7.6
+    - 5.8.0
+    - 5.8.1
+  - dependency-name: jquery
+    versions:
+    - 3.5.1
